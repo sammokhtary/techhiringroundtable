@@ -1,0 +1,34 @@
+{{- with resources.Get "js/main.js" }} {{- if eq hugo.Environment "development"
+}} {{- with . | js.Build }}
+<script src="{{ .RelPermalink }}"></script>
+{{- end }} {{- else }} {{- $opts := dict "minify" true }} {{- with . | js.Build
+$opts | fingerprint }}
+<script
+	src="{{ .RelPermalink }}"
+	integrity="{{- .Data.Integrity }}"
+	crossorigin="anonymous"
+></script>
+{{- end }} {{- end }} {{- end }}
+<script>
+	// Function to load the fonts and icons after the initial render
+	function loadFontsAndIcons() {
+		const fonts = [
+			"https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap",
+			"https://fonts.googleapis.com/icon?family=Material+Icons",
+		];
+
+		fonts.forEach((font) => {
+			const link = document.createElement("link");
+			link.rel = "stylesheet";
+			link.href = font;
+			document.head.appendChild(link);
+		});
+	}
+
+	// Defer loading the fonts and icons until after the initial page load
+	if (document.readyState === "complete") {
+		loadFontsAndIcons();
+	} else {
+		window.addEventListener("load", loadFontsAndIcons);
+	}
+</script>

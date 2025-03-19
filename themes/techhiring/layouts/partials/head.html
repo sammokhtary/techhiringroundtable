@@ -1,0 +1,63 @@
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>
+	{{ with .Params.seo.meta.title }}{{ . }}{{ else }}{{ .Title }}{{ end }}
+</title>
+<meta name="description" content="{{ .Params.seo.meta.description }}" />
+<meta name="keywords" content="{{ with .Params.seo.meta.keywords }}{{ delimit .
+", " }}{{ else }}{{ .Summary }}{{ end }}" /> <meta name="robots" content="{{
+.Params.seo.meta.robots | default "index, follow" }}" />
+<link
+	rel="canonical"
+	href="{{ .Params.seo.meta.canonical | default (print site.BaseURL .RelPermalink) }}"
+/>
+{{/*
+<!-- Preload background image -->
+<link rel="preload" href="/images/background.webp" as="image" />
+*/}}
+<!-- Favicon -->
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+<link rel="icon" type="image/png" sizes="64x64" href="/favicon-64x64.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<!-- Open Graph -->
+<meta
+	property="og:title"
+	content="{{ with .Params.seo.open_graph.title }}{{ . }}{{ else }}{{ .Params.seo.meta.title }}{{ end }}"
+/>
+<meta
+	property="og:description"
+	content="{{ with .Params.seo.open_graph.description }}{{ . }}{{ else }}{{ .Params.seo.meta.description }}{{ end }}"
+/>
+<meta
+	property="og:url"
+	content="{{ .Params.seo.open_graph.url | default .Permalink }}"
+/>
+<meta
+	property="og:image"
+	content="{{ .Params.seo.open_graph.image | default site.Params.defaultOgImage }}"
+/>
+<meta property="og:type" content="{{ .Params.seo.open_graph.type | default
+"website" }}" />
+<!-- Twitter Card -->
+<meta name="twitter:card" content="{{ .Params.seo.twitter.card | default
+"summary_large_image" }}" />
+<meta
+	name="twitter:title"
+	content="{{ with .Params.seo.twitter.title }}{{ . }}{{ else }}{{ .Params.seo.meta.title }}{{ end }}"
+/>
+<meta
+	name="twitter:description"
+	content="{{ with .Params.seo.twitter.description }}{{ . }}{{ else }}{{ .Params.seo.meta.description }}{{ end }}"
+/>
+<meta
+	name="twitter:image"
+	content="{{ .Params.seo.twitter.image | default site.Params.defaultTwitterImage }}"
+/>
+<meta
+	name="twitter:site"
+	content="{{ .Params.seo.twitter.site | default site.Params.twitterHandle }}"
+/>
+{{ partialCached "head/css.html" . }} {{ partialCached "head/js.html" . }}

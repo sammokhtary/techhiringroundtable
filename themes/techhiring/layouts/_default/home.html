@@ -1,0 +1,131 @@
+{{ define "main" }}
+<body class="bg-white text-gray-800 font-primary">
+	<!-- Header -->
+	<header class="border-b">
+		<div class="max-w-5xl mx-auto flex items-center justify-between px-4 py-4">
+			<!-- Left side: Logo + Title -->
+			<div class="flex items-center space-x-3">
+				<!-- Circle with "tHR" inside -->
+				<svg
+					width="74"
+					height="74"
+					viewBox="0 0 74 74"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<circle cx="37" cy="37" r="37" fill="#D9D9D9" />
+					<path
+						d="M14.2784 39.0909V40.5114H8.625V39.0909H14.2784ZM10.2727 36.4773H11.9489V46.875C11.9489 47.3485 12.0175 47.7036 12.1548 47.9403C12.2969 48.1723 12.4768 48.3286 12.6946 48.4091C12.9171 48.4848 13.1515 48.5227 13.3977 48.5227C13.5824 48.5227 13.7339 48.5133 13.8523 48.4943C13.9706 48.4706 14.0653 48.4517 14.1364 48.4375L14.4773 49.9432C14.3636 49.9858 14.205 50.0284 14.0014 50.071C13.7978 50.1184 13.5398 50.142 13.2273 50.142C12.7538 50.142 12.2898 50.0402 11.8352 49.8366C11.3854 49.633 11.0114 49.3229 10.7131 48.9062C10.4195 48.4896 10.2727 47.964 10.2727 47.3295V36.4773ZM18.4361 50V23.8182H21.6065V35.4773H35.5668V23.8182H38.7372V50H35.5668V38.2898H21.6065V50H18.4361ZM45.0845 50V23.8182H53.9311C55.9766 23.8182 57.6555 24.1676 58.968 24.8665C60.2805 25.5568 61.2521 26.5071 61.8828 27.7173C62.5135 28.9276 62.8288 30.304 62.8288 31.8466C62.8288 33.3892 62.5135 34.7571 61.8828 35.9503C61.2521 37.1435 60.2848 38.081 58.9808 38.7628C57.6768 39.4361 56.0107 39.7727 53.9822 39.7727H46.8232V36.9091H53.88C55.2777 36.9091 56.4027 36.7045 57.255 36.2955C58.1158 35.8864 58.7379 35.3068 59.1214 34.5568C59.5135 33.7983 59.7095 32.8949 59.7095 31.8466C59.7095 30.7983 59.5135 29.8821 59.1214 29.098C58.7294 28.3139 58.103 27.7088 57.2422 27.2827C56.3814 26.848 55.2436 26.6307 53.8288 26.6307H48.255V50H45.0845ZM57.4084 38.2386L63.8516 50H60.1697L53.8288 38.2386H57.4084Z"
+						fill="#5EB3E4"
+					/>
+				</svg>
+			</div>
+			<!-- Right side: Contact link -->
+			<nav>
+				<a
+					href="mailto:sam@zerotaxjobs.com?subject=UAE%20Tech%20Hiring%20Roundtable"
+					class="text-sm text-gray-600 hover:text-gray-800 uppercase tracking-wide"
+				>
+					Contact
+				</a>
+			</nav>
+		</div>
+	</header>
+
+	<!-- Main Content -->
+	<main class="max-w-5xl mx-auto">
+		<!-- For smaller screens, show the subtext that was hidden above -->
+		<div
+			class="flex flex-col md:flex-row w-full py-16 md:pt-32 md:pb-24 px-4 gap-4"
+		>
+			<h1 class="text-5xl font-light font-primary w-4/5 md:w-1/2">
+				UAE Tech Hiring Roundtable
+			</h1>
+			<p
+				class="font-primary text-base text-gray-600 mb-6 w-4/5 md:w-1/2 md:pl-20"
+			>
+				The UAE Tech Hiring Roundtable is an invite-only, private discussion
+				where hiring managers, CTOs, and talent leaders exchange real insights
+				on what’s actually working in tech hiring in the United Arab Emirates
+				right now.
+			</p>
+		</div>
+
+		<!-- Five Columns (responsive) -->
+		<div
+			class="grid grid-cols-1 mx-4 sm:grid-cols-2 smd:grid-cols-3 lg:grid-cols-5 gap-4"
+		>
+			<!-- Column 1 -->
+			<div class="bg-gray-100 p-4 h-40 md:h-60">
+				<div class="flex flex-col justify-between h-full">
+					<h2 class="font-semibold">
+						No recruiters,<br />
+						No vendors,<br />
+						No sales pitches
+					</h2>
+					<p class="text-sm text-gray-600 text-right italic pl-8">
+						Just your peers sharing real-world insights
+					</p>
+				</div>
+			</div>
+
+			<!-- Column 2 -->
+			<div class="bg-gray-100 p-4 h-40 md:h-60">
+				<div class="flex flex-col justify-between h-full">
+					<h2 class="font-semibold mb-2">
+						Small,<br />
+						high-impact<br />
+						group
+					</h2>
+					<p class="text-sm text-gray-600 text-right italic">
+						Limited seats to keep discussions focused and valuable
+					</p>
+				</div>
+			</div>
+
+			<!-- Column 3 -->
+			<div class="bg-gray-100 p-4 h-40 md:h-60">
+				<div class="flex flex-col justify-between h-full">
+					<h2 class="font-semibold mb-2">
+						Speak<br />
+						your<br />
+						mind
+					</h2>
+					<p class="text-sm text-gray-600 text-right italic">
+						Chatham House Rule: your participation stays private
+					</p>
+				</div>
+			</div>
+
+			<!-- Column 4 (blue background) -->
+			<div class="bg-blue-100 p-4 h-40 md:h-60">
+				<h2 class="font-semibold mb-2">
+					By<br />
+					Invite<br />
+					Only
+				</h2>
+				<!-- If you need more text, you can add it here -->
+			</div>
+
+			<!-- Column 5 -->
+			<div class="bg-gray-100 p-4 h-40 md:h-60">
+				<div class="flex flex-col justify-between h-full">
+					<h2 class="font-semibold mb-2">Contact Us</h2>
+					<a
+						href="mailto:sam@zerotaxjobs.com?subject=UAE%20Tech%20Hiring%20Roundtable"
+						class="text-sm text-gray-600 text-right italic"
+					>
+						sam@zerotaxjobs.com
+					</a>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<!-- Footer -->
+	<footer class="max-w-5xl mx-auto px-4 py-8 text-sm text-gray-500 text-right">
+		Hosted by <a href="https://zerotaxjobs.com">Zero Tax Jobs</a>
+	</footer>
+</body>
+
+{{ end }}
