@@ -1,4 +1,5 @@
-baseURL = 'https://techhiringroundtable.com'
+baseURL = 'https://techhiringroundtable.com/'
 languageCode = 'en-us'
 title = 'Tech Hiring Roundtable'
 theme = 'techhiring'
+canonifyURLs = true
