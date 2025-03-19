@@ -9,19 +9,38 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # Check out repository
       - uses: actions/checkout@v3
 
+      # Setup Node.js to run CSS build command
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+
+      # Install Node dependencies (tailwind, postcss, etc.)
+      - name: Install Node dependencies
+        run: npm install
+
+      # Build CSS using PostCSS/Tailwind setup
+      - name: Build CSS
+        run: npm run build:css
+
+      # Setup Hugo
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: "latest"
 
-      - name: Build
-        run: hugo
+      # Build the Hugo site (this will use the static folder that has the built CSS)
+      - name: Build Site with Hugo
+        run: hugo --minify
 
+      # Add the CNAME file to custom domain
       - name: Add CNAME file
         run: echo "techhiringroundtable.com" > public/CNAME
 
+      # Deploy the contents of the public folder to GitHub Pages
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
