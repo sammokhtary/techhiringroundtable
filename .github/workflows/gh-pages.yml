@@ -34,7 +34,7 @@ jobs:
 
       # Build the Hugo site (this will use the static folder that has the built CSS)
       - name: Build Site with Hugo
-        run: hugo --minify
+        run: hugo
 
       # Add the CNAME file to custom domain
       - name: Add CNAME file
